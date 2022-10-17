@@ -49,7 +49,6 @@ $ npm start
 ### ⌨ Pilha de tecnologias e bibliotecas
 
 -   [React](https://github.com/facebook/react)
-
 -   [JavaScript](https://www.javascript.com/)
 -   [CSS](https://purecss.io/)
 
