@@ -8,7 +8,7 @@ Internship Test
 
 </br>
 
-Projeto desenvolvido para o processo seletivo da Geopost Energy
+Projeto desenvolvido para o processo seletivo da Geopost Energy.
 
 ## Preview
 Interface do usuário.
