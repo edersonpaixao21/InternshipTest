@@ -1,0 +1,97 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family:'Times New Roman', Times, serif;
+    background-color: rgb(73, 6, 55);
+}
+
+.logo{
+    width: 350px;
+    height: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    color: white;
+    font-size: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+.finals {
+    text-align: center;
+    justify-content: center;
+}
+
+table.qualifiers {
+    width: 1000px;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solid white;
+    justify-content: center;
+    margin: 0px 20px 20px 170px;
+}
+
+table.qualifiers tr {
+    border: 1px solid white;
+}
+
+table.qualifiers tr td {
+    width: 200px;
+    height: auto;
+    justify-content: space-evenly;
+}
+
+.titleFinal {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    color: white;
+    font-size: 50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+table.qualifiersFinal {
+    width: 1000px;
+    display: flex;
+    font-family: 'Inter', sans-serif;
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 8px;
+    justify-content: center;
+    margin: 0px 20px 20px 170px;
+}
+
+.champion {
+    text-align: center;
+}
+
+.championFinal {
+    font-family: 'Inter', sans-serif;
+    color: white;
+    font-size: 20px; 
+}
+
+.finalchampion {
+    font-family: 'Inter', sans-serif;
+    color: white;
+    font-size: 20px; 
+    font-weight: 700;
+}
+
+.flag-champion {
+    margin-right: 30px;
+    width: 80px;
+    height: 80px;
+}

@@ -1,0 +1,31 @@
+table.classGroup {
+    border-radius: 8px;
+    border: 2px solid white;
+}
+
+table.classGroup td {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: white;
+    width: 180px;
+}
+
+.classifiedGroup {
+    display: inline-block;
+    margin: 0px 20px 20px 30px;
+}
+
+.GroupClassification {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: white;
+    text-align: center;
+}
+
+.classified {
+    background-color: #006400;
+}
+
+.disqualified {
+    background-color: #8b0000;
+}
