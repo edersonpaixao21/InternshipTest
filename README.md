@@ -48,20 +48,27 @@ $ npm start
 Simulação de envio para API
 
 ```bash
-# Abra o terminal/cmd e em seguida Clone este repositório
-$ git clone https://github.com/edersonpaixao21/InternshipTest.git
+const sendPostApi = [
+  {
+    "equipeA": class_semi[0],
+    "equipeB": class_semi[1],
+    "golsEquipeA": r.golsA,
+    "golsEquipeB": r.golsB,
+    "golsPenaltyTimeA": r.penaltisA,
+    "golsPenaltyTimeB": r.penaltisB,
+   }
+]
 
-# Acesse a pasta do projeto no terminal/cmd
-$ cd InternshipTest
-
-# Instale as dependências
-$ npm install ou apenas npm
-
-# Execute a aplicação em modo de desenvolvimento
-$ npm start
-
-# Execute server.json
-$ npm json-server server.json -p 3333
+useEffect(() => {
+  axios.post('https://estagio.geopostenergy.com/WorldCup/InsertFinalResult',
+  sendPostApi,
+    {
+      headers: {
+          'git-user': 'edersonpaixao21'
+      }
+    }).then(console.log("success"));
+// eslint-disable-next-line react-hooks/exhaustive-deps
+}, [])
 
 ```
 
