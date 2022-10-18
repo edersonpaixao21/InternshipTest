@@ -10,6 +10,8 @@ Internship Test
 
 Projeto desenvolvido para o processo seletivo da Geopost Energy.
 
+link do projeto: https://internshiptest-ten.vercel.app/
+
 ## Preview
 Interface do usuário.
 </br> 
