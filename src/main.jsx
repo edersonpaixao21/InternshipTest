@@ -467,7 +467,7 @@ export function Simulation() {
         sendPostApi,
             {
                 headers: {
-                    'git-user': 'theossalmeida'
+                    'git-user': 'edersonpaixao21'
                 }
             }).then(console.log("success"));
         // eslint-disable-next-line react-hooks/exhaustive-deps
