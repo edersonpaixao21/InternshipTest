@@ -1,8 +1,10 @@
-body {
+body {  
     margin: 0;
     padding: 0;
+    top: 0;
     font-family:'Times New Roman', Times, serif;
     background-color: rgb(73, 6, 55);
+    box-sizing: border-box;
 }
 
 .logo{
@@ -32,12 +34,16 @@ table.qualifiers {
     width: 1000px;
     color: white;
     font-family: 'Inter', sans-serif;
-    font-size: 20px;
     padding: 10px;
     border-radius: 8px;
     border: 2px solid white;
     justify-content: center;
-    margin: 0px 20px 20px 170px;
+    margin: 0px 20px 20px 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
 table.qualifiers tr {
@@ -70,10 +76,11 @@ table.qualifiersFinal {
     border: 2px solid white;
     border-radius: 8px;
     justify-content: center;
-    margin: 0px 20px 20px 170px;
+    margin: 0px 20px 20px 20px;
 }
 
 .champion {
+    
     text-align: center;
 }
 

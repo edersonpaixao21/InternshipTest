@@ -24,7 +24,6 @@ export function Simulation() {
         lista.push(teams["Result"][pais]["Name"])
     };
 
-    
     var grupoA = [];
     var grupoB = [];
     var grupoC = [];
@@ -34,7 +33,7 @@ export function Simulation() {
     var grupoG = [];
     var grupoH = [];
 
-    var z = 0
+    var z = 0 
     while (z < 32) {
         var y = Math.floor(Math.random() * ((31 - z) - 0 + 1)) + 0
         if (z <= 3) {
@@ -58,7 +57,7 @@ export function Simulation() {
         z += 1
     }
 
-    
+
     let classificacaoA = [
         { name: grupoA[0], pontos: c.pontosA1, sg: c.sg_A1 },
         { name: grupoA[1], pontos: c.pontosA2, sg: c.sg_A2 },
@@ -82,9 +81,9 @@ export function Simulation() {
         { name: grupoB[3], pontos: c.pontosB4, sg: c.sg_B4 },
     ]
     classificacaoB.sort(function (a, b) {
-        if (b.pontos !== a.pontos) {
+        if (b.pontos != a.pontos) {
             return (b.pontos - a.pontos)
-        } else if (b.sg !== a.sg) {
+        } else if (b.sg != a.sg) {
             return (b.sg - a.sg)
         } else {
             return (b.pontos - a.pontos)
@@ -98,9 +97,9 @@ export function Simulation() {
         { name: grupoC[3], pontos: c.pontosC4, sg: c.sg_C4 },
     ]
     classificacaoC.sort(function (a, b) {
-        if (b.pontos !== a.pontos) {
+        if (b.pontos != a.pontos) {
             return (b.pontos - a.pontos)
-        } else if (b.sg !== a.sg) {
+        } else if (b.sg != a.sg) {
             return (b.sg - a.sg)
         } else {
             return (b.pontos - a.pontos)
@@ -114,9 +113,9 @@ export function Simulation() {
         { name: grupoD[3], pontos: c.pontosD4, sg: c.sg_D4 },
     ]
     classificacaoD.sort(function (a, b) {
-        if (b.pontos !== a.pontos) {
+        if (b.pontos != a.pontos) {
             return (b.pontos - a.pontos)
-        } else if (b.sg !== a.sg) {
+        } else if (b.sg != a.sg) {
             return (b.sg - a.sg)
         } else {
             return (b.pontos - a.pontos)
@@ -130,9 +129,9 @@ export function Simulation() {
         { name: grupoE[3], pontos: c.pontosE4, sg: c.sg_E4 },
     ]
     classificacaoE.sort(function (a, b) {
-        if (b.pontos !== a.pontos) {
+        if (b.pontos != a.pontos) {
             return (b.pontos - a.pontos)
-        } else if (b.sg !== a.sg) {
+        } else if (b.sg != a.sg) {
             return (b.sg - a.sg)
         } else {
             return (b.pontos - a.pontos)
@@ -146,9 +145,9 @@ export function Simulation() {
         { name: grupoF[3], pontos: c.pontosF4, sg: c.sg_F4 },
     ]
     classificacaoF.sort(function (a, b) {
-        if (b.pontos !== a.pontos) {
+        if (b.pontos != a.pontos) {
             return (b.pontos - a.pontos)
-        } else if (b.sg !== a.sg) {
+        } else if (b.sg != a.sg) {
             return (b.sg - a.sg)
         } else {
             return (b.pontos - a.pontos)
@@ -162,9 +161,9 @@ export function Simulation() {
         { name: grupoG[3], pontos: c.pontosG4, sg: c.sg_G4 },
     ]
     classificacaoG.sort(function (a, b) {
-        if (b.pontos !== a.pontos) {
+        if (b.pontos != a.pontos) {
             return (b.pontos - a.pontos)
-        } else if (b.sg !== a.sg) {
+        } else if (b.sg != a.sg) {
             return (b.sg - a.sg)
         } else {
             return (b.pontos - a.pontos)
@@ -178,26 +177,30 @@ export function Simulation() {
         { name: grupoH[3], pontos: c.pontosH4, sg: c.sg_H4 },
     ]
     classificacaoH.sort(function (a, b) {
-        if (b.pontos !== a.pontos) {
+        if (b.pontos != a.pontos) {
             return (b.pontos - a.pontos)
-        } else if (b.sg !== a.sg) {
+        } else if (b.sg != a.sg) {
             return (b.sg - a.sg)
         } else {
             return (b.pontos - a.pontos)
         }
     })
 
-    
+  
     let class_oitavas = []
-    
-    function Oitavas(time1, time2, golTime1, golTime2, penaltiTime1, penaltiTime2) {
+
+    function Octaves(time1, time2, golTime1, golTime2, penaltiTime1, penaltiTime2) {
         if (golTime1 !== golTime2) {
             return (
                 <table>
                     <tr>
-                        <td align="right">{time1.name}</td>
+                        <td align="right">{time1.name}                    
+                        </td>
+                        <img class="flagPais" src={`../imgs/${time1.name}.png`} style={{paddingLeft: '0', marginLeft: '10px'}} />
                         <td align="center">{golTime1}x{golTime2}</td>
+                        <img class="flagPais" src={`../imgs/${time2.name}.png`} style={{paddingLeft: '0', marginRight: '10px'}} />
                         <td align="left">{time2.name}</td>
+                       
                     </tr>
                 </table>
             )
@@ -295,15 +298,17 @@ export function Simulation() {
     )
     
 
-    
+    // Quartas de final:
     let class_quartas = []
-    function Quartas(time1, golTime1, penaltiTime1, time2, golTime2, penaltiTime2) {
-        if (golTime1 !== golTime2) {
+    function QuarterFinals(time1, golTime1, penaltiTime1, time2, golTime2, penaltiTime2) {
+        if (golTime1 != golTime2) {
             return (
                 <table>
                     <tr>
                         <td align="right">{time1}</td>
+                        <img class="flagPais" src={`../imgs/${time1}.png`} style={{paddingLeft: '0', marginLeft: '10px'}} />
                         <td align="center">{golTime1}x{golTime2}</td>
+                        <img class="flagPais" src={`../imgs/${time2}.png`} style={{paddingLeft: '0', marginLeft: '10px'}} />
                         <td align="left">{time2}</td>
                     </tr>
                 </table>
@@ -321,13 +326,13 @@ export function Simulation() {
         }
     }
 
-    function PassaQuartas (time1, golTime1, penaltiTime1, time2, golTime2, penaltiTime2) {
+    function PassQuarter(time1, golTime1, penaltiTime1, time2, golTime2, penaltiTime2) {
         if ((golTime1 + penaltiTime1) > (golTime2 + penaltiTime2)) {
             class_quartas.push(time1)
         } else { class_quartas.push(time2) }
     }
 
-    PassaQuartas (
+    PassQuarter(
         class_oitavas[0],
         r.gol_O11,
         r.penaltiO11,
@@ -336,7 +341,7 @@ export function Simulation() {
         r.penaltiO12
     )
 
-    PassaQuartas (
+    PassQuarter(
         class_oitavas[2],
         r.gol_O21,
         r.penaltiO21,
@@ -345,7 +350,7 @@ export function Simulation() {
         r.penaltiO22
     )
 
-    PassaQuartas (
+    PassQuarter(
         class_oitavas[4],
         r.gol_O31,
         r.penaltiO31,
@@ -354,7 +359,7 @@ export function Simulation() {
         r.penaltiO32
     )
 
-    PassaQuartas (
+    PassQuarter(
         class_oitavas[6],
         r.gol_O41,
         r.penaltiO41,
@@ -363,15 +368,17 @@ export function Simulation() {
         r.penaltiO42
     )
 
-    
+
     let class_semi = []
     function Semi(time1, golTime1, penaltiTime1, time2, golTime2, penaltiTime2) {
-        if (golTime1 !== golTime2) {
+        if (golTime1 != golTime2) {
             return (
                 <table>
                     <tr>
                         <td align="right">{time1}</td>
+                        <img class="flagPais" src={`../imgs/${time1}.png`} style={{paddingLeft: '0', marginLeft: '10px'}} />
                         <td align="center">{golTime1}x{golTime2}</td>
+                        <img class="flagPais" src={`../imgs/${time2}.png`} style={{paddingLeft: '0', marginLeft: '10px'}} />
                         <td align="left">{time2}</td>
                     </tr>
                 </table>
@@ -389,13 +396,13 @@ export function Simulation() {
         }
     }
     
-    function Finalista (time1, golTime1, penaltiTime1, time2, golTime2, penaltiTime2) {
+    function Finalist(time1, golTime1, penaltiTime1, time2, golTime2, penaltiTime2) {
         if ((golTime1 + penaltiTime1) > (golTime2 + penaltiTime2)) {
             class_semi.push(time1)
         } else { class_semi.push(time2) }
     }
 
-    Finalista (
+    Finalist(
         class_quartas[0],
         r.gol_S11,
         r.penaltiS11,
@@ -404,7 +411,7 @@ export function Simulation() {
         r.penaltiS12
     )
 
-    Finalista (
+    Finalist(
         class_quartas[2],
         r.gol_S21,
         r.penaltiS21,
@@ -413,15 +420,16 @@ export function Simulation() {
         r.penaltiS22
     )
 
-    
     let campeao = []
     function Final() {
-        if (r.golsA !== r.golsB) {
+        if (r.golsA != r.golsB) {
             return (
                 <table>
                     <tr>
                         <td align="right">{class_semi[0]}</td>
+                        <img class="flagPais" src={`../imgs/${class_semi[0]}.png`} style={{paddingLeft: '0', marginLeft: '10px'}} />
                         <td align="center">{r.golsA}x{r.golsB}</td>
+                        <img class="flagPais" src={`../imgs/${class_semi[1]}.png`} style={{paddingLeft: '0', marginLeft: '10px'}} />
                         <td align="left">{class_semi[1]}</td>
                     </tr>
                 </table>
@@ -443,9 +451,7 @@ export function Simulation() {
     } else { campeao.push(class_semi[1]) }
 
 
-   
-
-    const envioAPI = [
+    const sendPostApi = [
         {
             "equipeA": class_semi[0],
             "equipeB": class_semi[1],
@@ -458,396 +464,395 @@ export function Simulation() {
 
     useEffect(() => {
         axios.post('https://estagio.geopostenergy.com/WorldCup/InsertFinalResult',
-            {
-                "equipeA": class_semi[0],
-                "equipeB": class_semi[1],
-                "golsEquipeA": r.golsA,
-                "golsEquipeB": r.golsB,
-                "golsPenaltyTimeA": r.penaltisA,
-                "golsPenaltyTimeB": r.penaltisB,
-            },
+        sendPostApi,
             {
                 headers: {
-                    'git-user': 'edersonpaixao21'
+                    'git-user': 'theossalmeida'
                 }
             }).then(console.log("success"));
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return (
         <Fragment>
-            <div>
-                <img className="logo" src={logo} alt="logo da copa do mundo 2022" />
-                <h1 className="title">Grupos Sorteados:</h1>
-                <table>
+            <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
+                <div>
+                    <img className="logo" src={logo} alt="logo da copa do mundo 2022" />
+                    <h1 className="title">Grupos Sorteados:</h1>
                     <div>
-                    <Groups
-                        title="Grupo A:"
-                        team1={grupoA[0]}
-                        team2={grupoA[1]}
-                        team3={grupoA[2]}
-                        team4={grupoA[3]}
-                    />
-                    <Groups
-                        title="Grupo B:"
-                        team1={grupoB[0]}
-                        team2={grupoB[1]}
-                        team3={grupoB[2]}
-                        team4={grupoB[3]}
-                    />
-                    <Groups
-                        title="Grupo C:"
-                        team1={grupoC[0]}
-                        team2={grupoC[1]}
-                        team3={grupoC[2]}
-                        team4={grupoC[3]}
-                    />
-                    <Groups
-                        title="Grupo D:"
-                        team1={grupoD[0]}
-                        team2={grupoD[1]}
-                        team3={grupoD[2]}
-                        team4={grupoD[3]}
-                    />
-                    </div>
-
-                    <div>
-                    <Groups
-                        title="Grupo E:"
-                        team1={grupoE[0]}
-                        team2={grupoE[1]}
-                        team3={grupoE[2]}
-                        team4={grupoE[3]}
-                    />
-                    <Groups
-                        title="Grupo F:"
-                        team1={grupoF[0]}
-                        team2={grupoF[1]}
-                        team3={grupoF[2]}
-                        team4={grupoF[3]}
-                    />
-                    <Groups
-                        title="Grupo G:"
-                        team1={grupoG[0]}
-                        team2={grupoG[1]}
-                        team3={grupoG[2]}
-                        team4={grupoG[3]}
-                    />
-                    <Groups
-                        title="Grupo H:"
-                        team1={grupoH[0]}
-                        team2={grupoH[1]}
-                        team3={grupoH[2]}
-                        team4={grupoH[3]}
-                    />
-                    </div>
-                    
-                </table>
-            </div>
-            <div>
-                <h1 className="title">Resultado das Rodadas</h1>
-                <table>                 
-                    <div>
-                        <Round
-                            title="Grupo A"
+                        <Groups
+                            title="Grupo A:"
                             team1={grupoA[0]}
                             team2={grupoA[1]}
                             team3={grupoA[2]}
                             team4={grupoA[3]}
                         />
-                        <Round
-                            title="Grupo B"
+                        <Groups
+                            title="Grupo B:"
                             team1={grupoB[0]}
                             team2={grupoB[1]}
                             team3={grupoB[2]}
                             team4={grupoB[3]}
                         />
-                        <Round
-                            title="Grupo C"
+                        <Groups
+                            title="Grupo C:"
                             team1={grupoC[0]}
                             team2={grupoC[1]}
                             team3={grupoC[2]}
                             team4={grupoC[3]}
                         />
-                        <Round
-                            title="Grupo D"
+                        <Groups
+                            title="Grupo D:"
                             team1={grupoD[0]}
                             team2={grupoD[1]}
                             team3={grupoD[2]}
                             team4={grupoD[3]}
                         />
-                    </div>
-                        <Round
-                            title="Grupo E"
+                        </div>
+
+                        <div>
+                        <Groups
+                            title="Grupo E:"
                             team1={grupoE[0]}
                             team2={grupoE[1]}
                             team3={grupoE[2]}
                             team4={grupoE[3]}
                         />
-                        <Round
-                            title="Grupo F"
+                        <Groups
+                            title="Grupo F:"
                             team1={grupoF[0]}
                             team2={grupoF[1]}
                             team3={grupoF[2]}
                             team4={grupoF[3]}
                         />
-                        <Round
-                            title="Grupo G"
+                        <Groups
+                            title="Grupo G:"
                             team1={grupoG[0]}
                             team2={grupoG[1]}
                             team3={grupoG[2]}
                             team4={grupoG[3]}
                         />
-                        <Round
-                            title="Grupo H"
+                        <Groups
+                            title="Grupo H:"
                             team1={grupoH[0]}
                             team2={grupoH[1]}
                             team3={grupoH[2]}
                             team4={grupoH[3]}
                         />
-                    
-                </table>
-            </div>
-            <div className="GroupClassification">
-                <h1 className="title">Classificação dos Grupos</h1>
-                    <div className="classifiedGroup">
-                        <Classified
-                            group="Grupo A"
-                            time1={classificacaoA[0]}
-                            time2={classificacaoA[1]}
-                            time3={classificacaoA[2]}
-                            time4={classificacaoA[3]}
-                        />
-                    </div>
+                        </div>
+                </div>
+                <div>
+                    <h1 className="title">Resultado das Rodadas</h1>
+                    <table>                 
+                        <div>
+                            <Round
+                                title="Grupo A"
+                                team1={grupoA[0]}
+                                team2={grupoA[1]}
+                                team3={grupoA[2]}
+                                team4={grupoA[3]}
+                            />
+                            <Round
+                                title="Grupo B"
+                                team1={grupoB[0]}
+                                team2={grupoB[1]}
+                                team3={grupoB[2]}
+                                team4={grupoB[3]}
+                            />
+                            <Round
+                                title="Grupo C"
+                                team1={grupoC[0]}
+                                team2={grupoC[1]}
+                                team3={grupoC[2]}
+                                team4={grupoC[3]}
+                            />
+                            <Round
+                                title="Grupo D"
+                                team1={grupoD[0]}
+                                team2={grupoD[1]}
+                                team3={grupoD[2]}
+                                team4={grupoD[3]}
+                            />
+                        </div>
+                            <Round
+                                title="Grupo E"
+                                team1={grupoE[0]}
+                                team2={grupoE[1]}
+                                team3={grupoE[2]}
+                                team4={grupoE[3]}
+                            />
+                            <Round
+                                title="Grupo F"
+                                team1={grupoF[0]}
+                                team2={grupoF[1]}
+                                team3={grupoF[2]}
+                                team4={grupoF[3]}
+                            />
+                            <Round
+                                title="Grupo G"
+                                team1={grupoG[0]}
+                                team2={grupoG[1]}
+                                team3={grupoG[2]}
+                                team4={grupoG[3]}
+                            />
+                            <Round
+                                title="Grupo H"
+                                team1={grupoH[0]}
+                                team2={grupoH[1]}
+                                team3={grupoH[2]}
+                                team4={grupoH[3]}
+                            />
+                        
+                    </table>
+                </div>
+                <div className="GroupClassification">
+                    <h1 className="title">Classificação dos Grupos</h1>
+                        <div className="classifiedGroup">
+                            <Classified
+                                group="Grupo A"
+                                time1={classificacaoA[0]}
+                                time2={classificacaoA[1]}
+                                time3={classificacaoA[2]}
+                                time4={classificacaoA[3]}
+                            />
+                        </div>
 
-                    <div className="classifiedGroup">
-                        <Classified
-                            group="Grupo B"
-                            time1={classificacaoB[0]}
-                            time2={classificacaoB[1]}
-                            time3={classificacaoB[2]}
-                            time4={classificacaoB[3]}
-                        />
-                    </div>
+                        <div className="classifiedGroup">
+                            <Classified
+                                group="Grupo B"
+                                time1={classificacaoB[0]}
+                                time2={classificacaoB[1]}
+                                time3={classificacaoB[2]}
+                                time4={classificacaoB[3]}
+                            />
+                        </div>
 
-                    <div className="classifiedGroup">
-                        <Classified
-                            group="Grupo C"
-                            time1={classificacaoC[0]}
-                            time2={classificacaoC[1]}
-                            time3={classificacaoC[2]}
-                            time4={classificacaoC[3]}
-                        />
-                    </div>
+                        <div className="classifiedGroup">
+                            <Classified
+                                group="Grupo C"
+                                time1={classificacaoC[0]}
+                                time2={classificacaoC[1]}
+                                time3={classificacaoC[2]}
+                                time4={classificacaoC[3]}
+                            />
+                        </div>
 
-                    <div className="classifiedGroup">
-                        <Classified
-                            group="Grupo D"
-                            time1={classificacaoD[0]}
-                            time2={classificacaoD[1]}
-                            time3={classificacaoD[2]}
-                            time4={classificacaoD[3]}
-                        />
-                    </div>
-                    
-                    <div className="classifiedGroup">
-                        <Classified
-                            group="Grupo E"
-                            time1={classificacaoE[0]}
-                            time2={classificacaoE[1]}
-                            time3={classificacaoE[2]}
-                            time4={classificacaoE[3]}
-                        />
-                    </div>
+                        <div className="classifiedGroup">
+                            <Classified
+                                group="Grupo D"
+                                time1={classificacaoD[0]}
+                                time2={classificacaoD[1]}
+                                time3={classificacaoD[2]}
+                                time4={classificacaoD[3]}
+                            />
+                        </div>
+                        
+                        <div className="classifiedGroup">
+                            <Classified
+                                group="Grupo E"
+                                time1={classificacaoE[0]}
+                                time2={classificacaoE[1]}
+                                time3={classificacaoE[2]}
+                                time4={classificacaoE[3]}
+                            />
+                        </div>
 
-                    <div className="classifiedGroup">
-                        <Classified
-                            group="Grupo F"
-                            time1={classificacaoF[0]}
-                            time2={classificacaoF[1]}
-                            time3={classificacaoF[2]}
-                            time4={classificacaoF[3]}
-                        />
-                    </div>
+                        <div className="classifiedGroup">
+                            <Classified
+                                group="Grupo F"
+                                time1={classificacaoF[0]}
+                                time2={classificacaoF[1]}
+                                time3={classificacaoF[2]}
+                                time4={classificacaoF[3]}
+                            />
+                        </div>
 
-                    <div className="classifiedGroup">
-                        <Classified
-                            group="Grupo G"
-                            time1={classificacaoG[0]}
-                            time2={classificacaoG[1]}
-                            time3={classificacaoG[2]}
-                            time4={classificacaoG[3]}
-                        />
-                    </div>
+                        <div className="classifiedGroup">
+                            <Classified
+                                group="Grupo G"
+                                time1={classificacaoG[0]}
+                                time2={classificacaoG[1]}
+                                time3={classificacaoG[2]}
+                                time4={classificacaoG[3]}
+                            />
+                        </div>
 
-                    <div className="classifiedGroup">
-                        <Classified
-                            group="Grupo H"
-                            time1={classificacaoH[0]}
-                            time2={classificacaoH[1]}
-                            time3={classificacaoH[2]}
-                            time4={classificacaoH[3]}
-                        />
-                    </div>
-            </div>
-            <div className="finals">
-                <h1 className="title">Oitavas de Final</h1>
-                <table className="qualifiers">
-                    <td>{Oitavas( 
-                        classificacaoA[0], 
-                        classificacaoB[1], 
-                        r.gol_1A, 
-                        r.gol_2B, 
-                        r.penaltiA1, 
-                        r.penaltiB2 )}</td>
+                        <div className="classifiedGroup">
+                            <Classified
+                                group="Grupo H"
+                                time1={classificacaoH[0]}
+                                time2={classificacaoH[1]}
+                                time3={classificacaoH[2]}
+                                time4={classificacaoH[3]}
+                            />
+                        </div>
+                </div>
+                <div className="finals">
+                    <h1 className="title">Oitavas de Final</h1>
+                    <table className="qualifiers">
+                        <td>{Octaves( 
+                            classificacaoA[0], 
+                            classificacaoB[1], 
+                            r.gol_1A, 
+                            r.gol_2B, 
+                            r.penaltiA1, 
+                            r.penaltiB2 )}
+                            
+                        </td>
 
-                    <td>{Oitavas( 
-                        classificacaoC[0], 
-                        classificacaoD[1], 
-                        r.gol_1C, 
-                        r.gol_2D, 
-                        r.penaltiC1, 
-                        r.penaltiD2
-                    )}</td>
-                </table>
-                <table className="qualifiers">
-                    <td>{Oitavas(
-                        classificacaoE[0],
-                        classificacaoF[1],
-                        r.gol_1E,
-                        r.gol_2F,
-                        r.penaltiE1,
-                        r.penaltiF2
-                    )}</td>
-                    <td>{Oitavas(
-                        classificacaoG[0],
-                        classificacaoH[1],
-                        r.gol_1G,
-                        r.gol_2H,
-                        r.penaltiG1,
-                        r.penaltiH2
-                    )}</td>
-                </table>
-                <table className="qualifiers">
-                    <td>{Oitavas(
-                        classificacaoB[0],
-                        classificacaoA[1],
-                        r.gol_1B,
-                        r.gol_2A,
-                        r.penaltiB1,
-                        r.penaltiA2
-                    )}</td>
-                    <td>{Oitavas(
-                        classificacaoD[0],
-                        classificacaoC[1],
-                        r.gol_1D,
-                        r.gol_2C,
-                        r.penaltiD1,
-                        r.penaltiC2
-                    )}</td>
-                </table>
-                <table className="qualifiers">
-                    <td>{Oitavas(
-                        classificacaoF[0],
-                        classificacaoE[1],
-                        r.gol_1F,
-                        r.gol_2E,
-                        r.penaltiF1,
-                        r.penaltiE2
-                    )}</td>
-                    <td>{Oitavas(
-                        classificacaoH[0],
-                        classificacaoG[1],
-                        r.gol_1H,
-                        r.gol_2G,
-                        r.penaltiH1,
-                        r.penaltiG2
-                    )}</td>                   
-                </table>
-            </div>
-            <div class="finals">
-            <h1 className="title">Quartas de Final</h1>
-                <table class="qualifiers">
+                        <td>{Octaves( 
+                            classificacaoC[0], 
+                            classificacaoD[1], 
+                            r.gol_1C, 
+                            r.gol_2D, 
+                            r.penaltiC1, 
+                            r.penaltiD2
+                        )}
+                        </td>
+                    </table>
+                    <table className="qualifiers">
+                        <td>{Octaves(
+                            classificacaoE[0],
+                            classificacaoF[1],
+                            r.gol_1E,
+                            r.gol_2F,
+                            r.penaltiE1,
+                            r.penaltiF2
+                        )}</td>
+                        <td>{Octaves(
+                            classificacaoG[0],
+                            classificacaoH[1],
+                            r.gol_1G,
+                            r.gol_2H,
+                            r.penaltiG1,
+                            r.penaltiH2
+                        )}
+                        </td>
+                    </table>
+                    <table className="qualifiers">
+                        <td>{Octaves(
+                            classificacaoB[0],
+                            classificacaoA[1],
+                            r.gol_1B,
+                            r.gol_2A,
+                            r.penaltiB1,
+                            r.penaltiA2
+                        )}</td>
+                        <td>{Octaves(
+                            classificacaoD[0],
+                            classificacaoC[1],
+                            r.gol_1D,
+                            r.gol_2C,
+                            r.penaltiD1,
+                            r.penaltiC2
+                        )}
+                        </td>
+                    </table>
+                    <table className="qualifiers">
+                        <td>{Octaves(
+                            classificacaoF[0],
+                            classificacaoE[1],
+                            r.gol_1F,
+                            r.gol_2E,
+                            r.penaltiF1,
+                            r.penaltiE2
+                        )}</td>
+                        <td>{Octaves(
+                            classificacaoH[0],
+                            classificacaoG[1],
+                            r.gol_1H,
+                            r.gol_2G,
+                            r.penaltiH1,
+                            r.penaltiG2
+                        )}
+                        </td>                   
+                    </table>
+                </div>
+                <div class="finals">
+                <h1 className="title">Quartas de Final</h1>
+                    <table class="qualifiers">
+                        <td>
+                        {QuarterFinals(
+                            class_oitavas[0],
+                            r.gol_O11,
+                            r.penaltiO11,
+                            class_oitavas[1],
+                            r.gol_O12,
+                            r.penaltiO12
+                        )}
+                        </td>
+                        <td>
+                        {QuarterFinals(
+                            class_oitavas[2],
+                            r.gol_O21,
+                            r.penaltiO21,
+                            class_oitavas[3],
+                            r.gol_O22,
+                            r.penaltiO22
+                        )}
+                        </td>
+                        </table>
+                        <table class="qualifiers">
+                        <td>
+                        {QuarterFinals(
+                            class_oitavas[4],
+                            r.gol_O31,
+                            r.penaltiO31,
+                            class_oitavas[5],
+                            r.gol_O32,
+                            r.penaltiO32
+                        )}
+                        </td>
+                        <td>
+                        {QuarterFinals(
+                            class_oitavas[4],
+                            r.gol_O41,
+                            r.penaltiO41,
+                            class_oitavas[5],
+                            r.gol_O42,
+                            r.penaltiO42
+                        )}
+                        </td>
+                    </table>
+                </div>
+                <div className="finals">
+                <h1 className="title">Semi-final</h1>
+                    <table className="qualifiers">
                     <td>
-                    {Quartas(
-                        class_oitavas[0],
-                        r.gol_O11,
-                        r.penaltiO11,
-                        class_oitavas[1],
-                        r.gol_O12,
-                        r.penaltiO12
+                    {Semi(
+                        class_quartas[0],
+                        r.gol_S11,
+                        r.penaltiS11,
+                        class_quartas[1],
+                        r.gol_S12,
+                        r.penaltiS12
                     )}
                     </td>
                     <td>
-                    {Quartas(
-                        class_oitavas[2],
-                        r.gol_O21,
-                        r.penaltiO21,
-                        class_oitavas[3],
-                        r.gol_O22,
-                        r.penaltiO22
+                    {Semi(
+                        class_quartas[2],
+                        r.gol_S21,
+                        r.penaltiS21,
+                        class_quartas[3],
+                        r.gol_S22,
+                        r.penaltiS22
                     )}
                     </td>
                     </table>
-                    <table class="qualifiers">
-                    <td>
-                    {Quartas(
-                        class_oitavas[4],
-                        r.gol_O31,
-                        r.penaltiO31,
-                        class_oitavas[5],
-                        r.gol_O32,
-                        r.penaltiO32
-                    )}
-                    </td>
-                    <td>
-                    {Quartas(
-                        class_oitavas[6],
-                        r.gol_O41,
-                        r.penaltiO41,
-                        class_oitavas[7],
-                        r.gol_O42,
-                        r.penaltiO42
-                    )}
-                    </td>
-                </table>
-            </div>
-            <div className="finals">
-            <h1 className="title">Semi-final</h1>
-                <table className="qualifiers">
-                <td>
-                {Semi(
-                    class_quartas[0],
-                    r.gol_S11,
-                    r.penaltiS11,
-                    class_quartas[1],
-                    r.gol_S12,
-                    r.penaltiS12
-                )}
-                </td>
-                <td>
-                {Semi(
-                    class_quartas[2],
-                    r.gol_S21,
-                    r.penaltiS21,
-                    class_quartas[3],
-                    r.gol_S22,
-                    r.penaltiS22
-                )}
-                </td>
-                </table>
-            </div>
-            <div className="final">
-                <h1 className="titleFinal">Final</h1>
-                <table className="qualifiersFinal">
-                    <td>{Final()}</td>
-                </table>
-            </div>
-            <div className="champion">
-                <p className="championFinal">
-                    Campeão da Copa do Mundo Qatar 2022 é
-                </p>
-                <img class="flag-champion" src={`../imgs/${campeao[0]}.png`} />
-                <p className="finalchampion">{campeao[0]}</p>
+                </div>
+                <div className="final">
+                    <h1 className="titleFinal">Final</h1>
+                    <table className="qualifiersFinal">
+                        <td>{Final()}</td>
+                    </table>
+                </div>
+                <div className="champion">
+                    <p className="championFinal">
+                        Campeão da Copa do Mundo Qatar 2022 é
+                    </p>
+                    <img class="flag-champion" src={`../imgs/${campeao[0]}.png`} />
+                    <p className="finalchampion">{campeao[0]}</p>
+                </div>
             </div>
         </Fragment>
     )
