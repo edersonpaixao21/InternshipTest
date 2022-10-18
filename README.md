@@ -17,7 +17,7 @@ Interface do usuário.
 <p align="center">
   <kbd>
  <img width="auto" style="border-radius: 10px" height="auto" 
- src="https://github.com/edersonpaixao21/InternshipTest/blob/master/public/imgs/GifPreview.gif" alt="Intro">
+ src="https://github.com/edersonpaixao21/InternshipTest/blob/master/public/imgs/Preview.gif" alt="Intro">
   </kbd>
   </br>
 </p>
@@ -41,6 +41,34 @@ $ npm install ou apenas npm
 $ npm start
 
 # O servidor inciará na porta:3000 - acesse <http://localhost:3000/>
+
+```
+
+### ⌨ Simulação
+Simulação de envio para API
+
+```bash
+const sendPostApi = [
+  {
+    "equipeA": class_semi[0],
+    "equipeB": class_semi[1],
+    "golsEquipeA": r.golsA,
+    "golsEquipeB": r.golsB,
+    "golsPenaltyTimeA": r.penaltisA,
+    "golsPenaltyTimeB": r.penaltisB,
+   }
+]
+
+useEffect(() => {
+  axios.post('https://estagio.geopostenergy.com/WorldCup/InsertFinalResult',
+  sendPostApi,
+    {
+      headers: {
+          'git-user': 'edersonpaixao21'
+      }
+    }).then(console.log("success"));
+// eslint-disable-next-line react-hooks/exhaustive-deps
+}, [])
 
 ```
 
