@@ -17,7 +17,7 @@ Interface do usuário.
 <p align="center">
   <kbd>
  <img width="auto" style="border-radius: 10px" height="auto" 
- src="https://github.com/edersonpaixao21/InternshipTest/blob/master/public/imgs/GifPreview.gif" alt="Intro">
+ src="https://github.com/edersonpaixao21/InternshipTest/blob/master/public/imgs/Preview.gif" alt="Intro">
   </kbd>
   </br>
 </p>
@@ -41,6 +41,27 @@ $ npm install ou apenas npm
 $ npm start
 
 # O servidor inciará na porta:3000 - acesse <http://localhost:3000/>
+
+```
+
+### ⌨ Simulação
+Simulação de envio para API
+
+```bash
+# Abra o terminal/cmd e em seguida Clone este repositório
+$ git clone https://github.com/edersonpaixao21/InternshipTest.git
+
+# Acesse a pasta do projeto no terminal/cmd
+$ cd InternshipTest
+
+# Instale as dependências
+$ npm install ou apenas npm
+
+# Execute a aplicação em modo de desenvolvimento
+$ npm start
+
+# Execute server.json
+$ npm json-server server.json -p 3333
 
 ```
 
